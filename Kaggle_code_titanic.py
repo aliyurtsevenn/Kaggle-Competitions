@@ -1,3 +1,15 @@
+import sys
+import subprocess
+
+# Let me first install the required packages! 
+subprocess.check_call([sys.executable, '-m', 'pip', 'install',
+'sklearn'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install',
+'pandas'])
+subprocess.check_call([sys.executable, '-m', 'pip', 'install',
+'numpy'])
+
+# Let me import the packages 
 from sklearn import datasets
 import pandas as pd
 import numpy as np
@@ -18,14 +30,12 @@ data_.loc[data_["Sex"]=="male","Sex"]=1
 # Let me get the attributes and labels!
 
 
-#
 Attributes_=data_[['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare',
        'Embarked']]
 Labels_=data_["Survived"]
 
 
 # Let me convert Attributes and Labels dataframes to numpy array and scale my data!
-
 
 
 Attributes= np.array(Attributes_)
